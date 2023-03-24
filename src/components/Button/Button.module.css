@@ -1,0 +1,16 @@
+.btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0;
+  border: 2px solid var(--primary-color);
+  color: #24232c;
+  background-color: var(--primary-color);
+  padding: 12px;
+  font-family: inherit;
+}
+
+.btn:hover {
+  background-color: transparent;
+  color: var(--primary-color);
+}
