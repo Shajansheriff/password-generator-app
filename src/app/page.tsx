@@ -1,9 +1,7 @@
 "use client";
 
-import { Inter } from "next/font/google";
-import { FormEventHandler, useState } from "react";
-
-const inter = Inter({ subsets: ["latin"] });
+import { Button } from "@/components/Button";
+import { FormEventHandler, useEffect, useState } from "react";
 
 const alphabets_lowercase = "abcdefghijklmnopqrstuvwxyz";
 const alphabets_uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
@@ -57,9 +55,12 @@ const generate = ({ length, rules }: Config) => {
 
 export default function Home() {
   const [length, setLength] = useState(8);
-  const [password, setPassword] = useState(
-    generate({ length, rules: ["lowercase"] })
-  );
+  const [password, setPassword] = useState("");
+  useEffect(() => {
+    if (!password) {
+      setPassword(generate({ length, rules: ["lowercase"] }));
+    }
+  }, [length, password]);
   const onSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -99,7 +100,7 @@ export default function Home() {
         <label htmlFor="numbers">Include Numbers</label>
         <input type="checkbox" name="rules" id="symbols" value="symbols" />
         <label htmlFor="symbols">Include Symbols</label>
-        <button type="submit">Generate</button>
+        <Button type="submit">Generate</Button>
       </form>
     </main>
   );
