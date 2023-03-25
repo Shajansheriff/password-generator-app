@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/Button";
+import { Checkbox } from "@/components/Checkbox";
 import { FormEventHandler, useEffect, useState } from "react";
 
 const alphabets_lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -81,24 +82,18 @@ export default function Home() {
           value={length}
           onChange={(e) => setLength(parseInt(e.target.value, 10))}
         />
-        <input
-          type="checkbox"
-          name="rules"
-          id="uppercase"
-          value={"uppercase"}
-        />
+        <Checkbox name="rules" id="uppercase" value={"uppercase"} />
         <label htmlFor="uppercase">Include Uppercase Letters</label>
-        <input
-          type="checkbox"
+        <Checkbox
           name="rules"
           id="lowercase"
           value="lowercase"
           defaultChecked={true}
         />
         <label htmlFor="lowercase">Include Lowercase Letters</label>
-        <input type="checkbox" name="rules" id="numbers" value="numbers" />
+        <Checkbox name="rules" id="numbers" value="numbers" />
         <label htmlFor="numbers">Include Numbers</label>
-        <input type="checkbox" name="rules" id="symbols" value="symbols" />
+        <Checkbox name="rules" id="symbols" value="symbols" />
         <label htmlFor="symbols">Include Symbols</label>
         <Button type="submit">Generate</Button>
       </form>
