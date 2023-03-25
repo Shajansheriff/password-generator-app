@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/Button";
 import { Checkbox } from "@/components/Checkbox";
+import { Label } from "@/components/Label";
 import { FormEventHandler, useEffect, useState } from "react";
 
 const alphabets_lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -82,19 +83,27 @@ export default function Home() {
           value={length}
           onChange={(e) => setLength(parseInt(e.target.value, 10))}
         />
-        <Checkbox name="rules" id="uppercase" value={"uppercase"} />
-        <label htmlFor="uppercase">Include Uppercase Letters</label>
-        <Checkbox
-          name="rules"
-          id="lowercase"
-          value="lowercase"
-          defaultChecked={true}
-        />
-        <label htmlFor="lowercase">Include Lowercase Letters</label>
-        <Checkbox name="rules" id="numbers" value="numbers" />
-        <label htmlFor="numbers">Include Numbers</label>
-        <Checkbox name="rules" id="symbols" value="symbols" />
-        <label htmlFor="symbols">Include Symbols</label>
+        <Label>
+          <Checkbox name="rules" value={"uppercase"} />
+          Include Uppercase Letters
+        </Label>
+        <Label>
+          <Checkbox
+            name="rules"
+            id="lowercase"
+            value="lowercase"
+            defaultChecked={true}
+          />
+          Include Lowercase Letters
+        </Label>
+        <Label>
+          <Checkbox name="rules" value="numbers" />
+          Include Numbers
+        </Label>
+        <Label>
+          <Checkbox name="rules" value="symbols" />
+          Include Symbols
+        </Label>
         <Button type="submit">Generate</Button>
       </form>
     </main>
