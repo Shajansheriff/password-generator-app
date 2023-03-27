@@ -1,6 +1,6 @@
 import "./globals.css";
 import { JetBrains_Mono } from "next/font/google";
-const font = JetBrains_Mono({ subsets: ["latin"] });
+const font = JetBrains_Mono({ weight: ["700"], subsets: ["latin"] });
 
 export const metadata = {
   title: "Create Next App",

@@ -1,15 +1,13 @@
 :root {
+  --color-almost-white: #e6e5ea;
+  --color-very-dark-grey: #18171f;
   --primary-color: #a4ffaf;
   --surface-0: #24232c;
   --surface-1: #24232c;
-  --text-color: #e6e5ea;
+  --text-color: var(--color-almost-white);
 }
 
 body {
   background-color: var(--surface-0);
   color: var(--text-color);
-}
-
-body * {
-  font-weight: 700;
 }
