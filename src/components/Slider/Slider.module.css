@@ -1,0 +1,27 @@
+.slider {
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  background-color: var(--color-almost-white);
+  margin-top: -12px;
+}
+
+.slider::-webkit-slider-runnable-track {
+  height: 8px;
+  background-color: var(--primary-color);
+}
+
+.slider:focus {
+  outline: none;
+}
+
+.slider:focus::-webkit-slider-thumb {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 1px;
+}

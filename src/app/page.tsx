@@ -3,6 +3,7 @@
 import { Button } from "@/components/Button";
 import { Checkbox } from "@/components/Checkbox";
 import { Label } from "@/components/Label";
+import { Slider } from "@/components/Slider";
 import { FormEventHandler, useEffect, useState } from "react";
 
 const alphabets_lowercase = "abcdefghijklmnopqrstuvwxyz";
@@ -35,8 +36,8 @@ interface Config {
 const generate = ({ length, rules }: Config) => {
   let string = "";
   for (let i = 0; i < length; i++) {
+    const type = getRandomType(rules);
     const char = (() => {
-      const type = getRandomType(rules);
       switch (type) {
         case "symbols":
           return getRandomChar(symbols);
@@ -73,9 +74,9 @@ export default function Home() {
     <main>
       {password}
       <form onSubmit={onSubmit}>
-        Length: {length}
-        <input
-          type="range"
+        <div>Length: {length}</div>
+        <br />
+        <Slider
           name="length"
           min={1}
           max={99}
