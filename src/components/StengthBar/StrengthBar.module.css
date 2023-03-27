@@ -1,0 +1,31 @@
+.rectangle {
+  --color: var(--color-almost-white);
+  width: 10px;
+  height: 28px;
+  border: 2px solid var(--color);
+}
+
+.filled {
+  background-color: var(--color);
+}
+
+.poor {
+  --color: var(--color-red);
+}
+
+.weak {
+  --color: var(--color-orange);
+}
+
+.medium {
+  --color: var(--color-yellow);
+}
+
+.success {
+  --color: var(--color-neon-green);
+}
+
+.strengthBar {
+  display: flex;
+  gap: 8px;
+}

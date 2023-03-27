@@ -1,10 +1,19 @@
 :root {
+  --color-dark-grey: #24232c;
+  --color-grey: #817d92;
   --color-almost-white: #e6e5ea;
   --color-very-dark-grey: #18171f;
-  --primary-color: #a4ffaf;
-  --surface-0: #24232c;
-  --surface-1: #24232c;
+  --color-neon-green: #a4ffaf;
+  --color-red: #f64a4a;
+  --color-orange: #fb7c58;
+  --color-yellow: #f8cd65;
+
+  --primary-color: var(--color-neon-green);
+
   --text-color: var(--color-almost-white);
+
+  --surface-0: var(--color-very-dark-grey);
+  --surface-1: var(--color-dark-grey);
 }
 
 body {
