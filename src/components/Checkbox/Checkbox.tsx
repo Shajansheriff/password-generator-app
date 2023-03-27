@@ -1,5 +1,5 @@
 import { DetailedHTMLProps, InputHTMLAttributes } from "react";
-import styles from "./Checkbox.module.css";
+import styles from "./Styles.module.css";
 
 interface CheckboxProps
   extends Omit<
